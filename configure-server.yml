@@ -3,7 +3,8 @@
   become: yes
   tasks:
   - name: install docker
-    apt: 
+    #apt:
+    yum:
       pkg: docker.io
       state: present
 
@@ -14,5 +15,5 @@
       enabled: true
 
   - name: deploy addressbook application
-    command: docker run -itd -p 8090:8080 shubhamkushwah123/addressbook:8.0
+    command: docker run -itd -p 8090:8080 sarojdevops/webappv2
 
